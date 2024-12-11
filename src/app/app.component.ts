@@ -14,13 +14,9 @@ export class AppComponent implements OnInit {
 
   sneakers: any[] = [];
 
-  constructor(private sneakersService: SneakersFirebaseService) {}
+  constructor() {}
   
   ngOnInit() {
     console.log('Firebase initialized successfully!');
-    // this.sneakersService.getSneakers().subscribe(data => {
-    //   this.sneakers = data;
-    //   console.log(this.sneakers);
-    // });
   }
 }

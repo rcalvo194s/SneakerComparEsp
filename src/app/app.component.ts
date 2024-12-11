@@ -18,9 +18,9 @@ export class AppComponent implements OnInit {
   
   ngOnInit() {
     console.log('Firebase initialized successfully!');
-    this.sneakersService.getSneakers().subscribe(data => {
-      this.sneakers = data;
-      console.log(this.sneakers);
-    });
+    // this.sneakersService.getSneakers().subscribe(data => {
+    //   this.sneakers = data;
+    //   console.log(this.sneakers);
+    // });
   }
 }

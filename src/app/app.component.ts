@@ -12,8 +12,6 @@ import { SneakersFirebaseService } from '../services/sneakers-firebase.service';
 })
 export class AppComponent implements OnInit {
 
-  sneakers: any[] = [];
-
   constructor() {}
   
   ngOnInit() {

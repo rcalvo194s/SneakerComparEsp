@@ -8,10 +8,10 @@ body {
     background-color: #762f00;
 
     .logo {
-      font-family: Broadway, sans-serif;
+      font-family: "Broadway", sans-serif;
       font-weight: bold;
       font-size: 1.5rem;
-      color: white;
+      color: #ffffff;
     }
     
     .spacer {
@@ -19,8 +19,13 @@ body {
     }
     
     a {
-      font-family: "Broadway", sans-serif;
-      color: white;
+      font-family: 'Broadway', sans-serif;
+      color: #ffffff;
+      transition: background-color 0.3s;
+    }
+    
+    a:hover {
+      background-color: #4e1d00;
     }
   }
   
@@ -49,11 +54,16 @@ body {
       z-index: -1;
     }
     
+    > * {
+      transform: translateY(-3rem);
+    }
+    
     .home-title {
       font-family: "Broadway", sans-serif;
-      font-size: 3.5rem;
-      color: white;
+      font-size: 3rem;
+      color: #ffffff;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      margin-top: 0;
       margin-bottom: 3rem;
     }
   }
@@ -62,7 +72,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
   
     .search-box {
       display: flex;
@@ -70,7 +80,7 @@ body {
       width: 100%;
       border: 2px solid #762f00;
       border-radius: 50px;
-      background-color: white;
+      background-color: #ffffff;
       padding: 5px 10px;
   
       input {
@@ -80,12 +90,12 @@ body {
         padding: 10px 15px;
         font-size: 1rem;
         font-family: 'Broadway', sans-serif;
-        color: #333;
+        color: #333333;
         border-radius: 50px;
       }
   
       input::placeholder {
-        color: #888;
+        color: #888888;
         font-style: italic;
       }
   
@@ -94,7 +104,7 @@ body {
         align-items: center;
         justify-content: center;
         background-color: #762f00;
-        color: white;
+        color: #ffffff;
         border: none;
         border-radius: 50%;
         width: 40px;
@@ -108,7 +118,7 @@ body {
         }
   
         &:hover {
-          background-color: #5a2200;
+          background-color: #4e1d00;
         }
       }
     }

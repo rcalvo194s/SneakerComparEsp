@@ -1,1 +1,32 @@
-<p>results works!</p>
+<div class="results-container">
+    <mat-toolbar>
+      <span class="logo">SneakerComparEsp</span>
+      <span class="spacer"></span>
+      <a mat-button routerLink="/home">Inicio</a>
+      <a mat-button routerLink="/compare">Comparación</a>
+      <a mat-button routerLink="/about">Acerca de</a>
+    </mat-toolbar>
+  
+    <div class="search-container">
+        <form (submit)="onSearch()" class="search-box">
+            <input type="text" [(ngModel)]="searchQuery" 
+                placeholder="Busca tu sneaker por nombre, marca, modelo..." 
+                name="search" required/>
+            <button type="submit">
+                <span class="material-icons">search</span>
+            </button>
+        </form>
+    </div>
+  
+    <div class="results-list">
+        <div class="result-card" *ngFor="let sneaker of sneakers">
+            <img [src]="sneaker.image" alt="Sneaker image" class="sneaker-image" />
+            <div class="sneaker-info">
+                <h2>{{ sneaker.name }}</h2>
+                <p>Precio más bajo: {{ sneaker.price }}</p>
+                <p>Marca: {{ sneaker.brand }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+  

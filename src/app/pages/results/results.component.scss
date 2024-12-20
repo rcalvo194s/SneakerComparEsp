@@ -1,33 +1,5 @@
 body {
     overflow: hidden;
-
-    mat-toolbar {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 20px;
-        background-color: #762f00;
-    
-        .logo {
-          font-family: "Broadway", sans-serif;
-          font-weight: bold;
-          font-size: 1.5rem;
-          color: #ffffff;
-        }
-        
-        .spacer {
-          flex: 1 1 auto;
-        }
-        
-        a {
-          font-family: 'Broadway', sans-serif;
-          color: #ffffff;
-          transition: background-color 0.3s;
-        }
-        
-        a:hover {
-          background-color: #4e1d00;
-        }
-    }
     
     .results-container {
         display: flex;

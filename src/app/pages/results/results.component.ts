@@ -1,23 +1,23 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
+
 import { NavToolbarComponent } from '../../components/nav-toolbar/nav-toolbar.component';
+import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
 
 @Component({
   selector: 'app-results',
   standalone: true,
   imports: [
-    NavToolbarComponent,
     FormsModule,
-    CommonModule
+    CommonModule,
+    NavToolbarComponent,
+    SearchBarComponent
 ],
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss']
 })
 export class ResultsComponent {
-  searchQuery: string = '';
   sneakers = [
     {
       image: 'https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Chicago-Reimagined-GS-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1669232518',
@@ -32,8 +32,4 @@ export class ResultsComponent {
       brand: 'Adidas',
     },
   ];
-
-  onSearch() {
-    console.log(`Buscando sneakers con la query: ${this.searchQuery}`);
-  }
 }

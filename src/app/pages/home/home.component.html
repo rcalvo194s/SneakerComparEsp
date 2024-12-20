@@ -10,16 +10,7 @@
     
     <div class="home-container">
         <h1 class="home-title">Encuentra tus Sneakers favoritas al mejor precio</h1>
-        <div class="search-container">
-            <form (submit)="onSearch()" class="search-box">
-                <input type="text" [(ngModel)]="searchQuery" 
-                    placeholder="Busca tu sneaker por nombre, marca, modelo..." 
-                    name="search" required/>
-                <button type="submit">
-                    <span class="material-icons">search</span>
-                </button>
-            </form>
-        </div>  
+        <app-search-bar></app-search-bar>
     </div>
 </body>
 </html>

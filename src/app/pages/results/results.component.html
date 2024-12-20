@@ -6,13 +6,8 @@
     <title>Results</title>
 </head>
 <body>
-    <mat-toolbar>
-        <span class="logo">SneakerComparEsp</span>
-        <span class="spacer"></span>
-        <a mat-button routerLink="/home">Inicio</a>
-        <a mat-button routerLink="/compare">Comparación</a>
-        <a mat-button routerLink="/about">Acerca de</a>
-    </mat-toolbar>
+    <app-nav-toolbar></app-nav-toolbar>
+    
     <div class="results-container">
         <div class="search-container">
             <form (submit)="onSearch()" class="search-box">

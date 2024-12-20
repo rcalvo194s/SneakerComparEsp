@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+
+import { NavToolbarComponent } from '../../components/nav-toolbar/nav-toolbar.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    MatToolbarModule,
     MatInputModule,
-    MatButtonModule,
     MatIconModule,
     FormsModule,
+    NavToolbarComponent
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],

@@ -13,14 +13,16 @@
       
         <div class="results-list">
             <div class="result-card" *ngFor="let sneaker of sneakers">
-                <img [src]="sneaker.image" alt="Sneaker image" class="sneaker-image" />
+                <img [src]="sneaker.imagenUrl" alt="Imagen de {{ sneaker.nombre }}" class="sneaker-image" />
                 <div class="sneaker-info">
-                    <h2>{{ sneaker.name }}</h2>
-                    <p>Precio más bajo: {{ sneaker.price }}</p>
-                    <p>Marca: {{ sneaker.brand }}</p>
+                    <h2>{{ sneaker.nombre }}</h2>
+                    <p>Precio más bajo: {{ sneaker.precio }}€</p>
+                    <p>Marca: {{ sneaker.marca }}</p>
+                    <p>Modelo: {{ sneaker.modelo }}</p>
                 </div>
             </div>
         </div>
+
     </div>
 </body>
 </html>

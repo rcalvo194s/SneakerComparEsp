@@ -31,5 +31,41 @@ export class ResultsComponent {
       price: 200,
       brand: 'Adidas',
     },
+    {
+      image: 'https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Chicago-Reimagined-GS-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1669232518',
+      name: 'Yeezy Boost 350',
+      price: 200,
+      brand: 'Adidas',
+    },
+    {
+      image: 'https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Chicago-Reimagined-GS-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1669232518',
+      name: 'Yeezy Boost 350',
+      price: 200,
+      brand: 'Adidas',
+    },
+    {
+      image: 'https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Chicago-Reimagined-GS-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1669232518',
+      name: 'Yeezy Boost 350',
+      price: 200,
+      brand: 'Adidas',
+    },
+    {
+      image: 'https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Chicago-Reimagined-GS-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1669232518',
+      name: 'Yeezy Boost 350',
+      price: 200,
+      brand: 'Adidas',
+    },
+    {
+      image: 'https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Chicago-Reimagined-GS-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1669232518',
+      name: 'Yeezy Boost 350',
+      price: 200,
+      brand: 'Adidas',
+    },
+    {
+      image: 'https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Chicago-Reimagined-GS-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1669232518',
+      name: 'Yeezy Boost 350',
+      price: 200,
+      brand: 'Adidas',
+    },
   ];
 }

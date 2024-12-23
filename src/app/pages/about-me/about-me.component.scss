@@ -1,0 +1,34 @@
+.about-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+
+    .about-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #941975;
+    }
+
+    .about-description,
+    .about-contact,
+    .about-social,
+    .about-me {
+        margin-bottom: 30px;
+    }
+
+    .social-links {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+
+        li a {
+            text-decoration: none;
+            color: #941975;
+            font-weight: bold;
+        }
+    }
+}

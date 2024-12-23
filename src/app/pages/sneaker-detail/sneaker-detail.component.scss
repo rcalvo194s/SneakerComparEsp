@@ -1,0 +1,76 @@
+.sneaker-detail-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .search-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sneaker-info {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+
+    .sneaker-image {
+      max-width: 300px;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+
+    .details {
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .price-comparison {
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border: 2px solid #762f00;
+      border-radius: 21px;
+      border-spacing: 0;
+
+      th, td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #e7a173;
+      }
+
+      th:first-child {
+        border-top-left-radius: 20px;
+      }
+
+      th:last-child {
+        border-top-right-radius: 20px;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+  

@@ -7,5 +7,43 @@
 </head>
 <body>
     <app-nav-toolbar></app-nav-toolbar>
+
+    <div class="sneaker-detail-container">
+      <div class="search-bar">
+        <app-search-bar></app-search-bar>
+      </div>
+
+      <div class="sneaker-info">
+        <img [src]="sneaker.imagenUrl" alt="Imagen de {{ sneaker.nombre }}" class="sneaker-image" />
+        <div class="details">
+          <h1>{{ sneaker.nombre }}</h1>
+          <p><strong>Marca:</strong> {{ sneaker.marca }}</p>
+          <p><strong>Modelo:</strong> {{ sneaker.modelo }}</p>
+          <p><strong>Precio base:</strong> {{ sneaker.precio }}€</p>
+          <p><strong>Fecha de lanzamiento:</strong> 11/01/2021</p>
+          <p><strong>Colores:</strong> Rojo, Azul, Negro</p>
+        </div>
+      </div>
+    
+      <div class="price-comparison">
+        <h2>Comparativa de precios</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Web</th>
+              <th>Precio (€)</th>
+              <th>Enlace</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of compareTable">
+              <td>{{ item.web }}</td>
+              <td>{{ item.precio }}</td>
+              <td><a [href]="item.enlace" target="_blank" rel="noopener">Comprar</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 </body>
 </html>

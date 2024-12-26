@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { collection, collectionData, Firestore } from '@angular/fire/firestore';
+import { addDoc, collection, collectionData, Firestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,5 +12,10 @@ export class SneakersFirebaseService {
   getSneakers(): Observable<any[]> {
     const sneakersCollection = collection(this.firestore, 'sneakers');
     return collectionData(sneakersCollection);
+  }
+
+  addSneaker(sneaker: any): Promise<any> {
+    const sneakersCollection = collection(this.firestore, 'sneakers');
+    return addDoc(sneakersCollection, sneaker);
   }
 }

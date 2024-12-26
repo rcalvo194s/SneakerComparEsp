@@ -12,7 +12,7 @@
         <app-search-bar></app-search-bar>
       
         <div class="results-list">
-            <div class="result-card" *ngFor="let sneaker of sneakers">
+            <div class="result-card" routerLink="/detail" *ngFor="let sneaker of sneakers">
                 <img [src]="sneaker.imagenUrl" alt="Imagen de {{ sneaker.nombre }}" class="sneaker-image" />
                 <div class="sneaker-info">
                     <h2>{{ sneaker.nombre }}</h2>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -17,7 +18,10 @@ import { FormsModule } from '@angular/forms';
 export class SearchBarComponent {
   searchQuery: string = '';
 
+  constructor(private router: Router) {}
+
   onSearch() {
     console.log('Buscando por:', this.searchQuery);
+    this.router.navigate(['/results']);
   }
 }

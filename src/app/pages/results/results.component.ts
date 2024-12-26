@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { NavToolbarComponent } from '../../components/nav-toolbar/nav-toolbar.component';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
 import { Sneaker } from '../../models/sneaker.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -14,6 +15,7 @@ import { Sneaker } from '../../models/sneaker.model';
     CommonModule,
     NavToolbarComponent,
     SearchBarComponent,
+    RouterModule
 ],
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss']

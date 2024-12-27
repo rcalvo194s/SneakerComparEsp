@@ -21,10 +21,11 @@ export class SneakerDetailComponent implements OnInit {
   sneaker: Sneaker = {
     id: '1',
     imagenUrl: 'https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Chicago-Reimagined-GS-Product.jpg',
-    nombre: 'Air Jordan 1 Retro High OG',
-    precio: 170,
     marca: 'Nike',
     modelo: 'Chicago Reimagined',
+    nombre: 'Air Jordan 1 Retro High OG',
+    precioBase: 170,
+    precios: []
   };
 
   compareTable = [

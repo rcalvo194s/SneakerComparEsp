@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavToolbarComponent } from '../../components/nav-toolbar/nav-toolbar.component';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
 import { SneakersFirebaseService } from '../../../services/sneakers-firebase.service';
+import { Sneaker } from '../../models/sneaker.model';
 
 @Component({
   selector: 'app-home',
@@ -16,14 +17,11 @@ import { SneakersFirebaseService } from '../../../services/sneakers-firebase.ser
 })
 export class HomeComponent implements OnInit {
   
-  sneakers: any[] = [];
-  sneakersData: any[] = []
-
+  sneakers: Sneaker[] = [];
   constructor(private sneakersService: SneakersFirebaseService) {}
 
   ngOnInit() {
     console.log('Firebase initialized successfully!');
-    // this.uploadSneakers();
     this.sneakersService.getSneakers().subscribe(data => {
       this.sneakers = data;
       console.log(this.sneakers);

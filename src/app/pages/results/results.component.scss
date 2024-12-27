@@ -1,6 +1,4 @@
 body {
-    // overflow: hidden;
-    
     .results-container {
         position: relative;
         display: flex;
@@ -9,7 +7,6 @@ body {
         justify-content: center;
         height: 100vh;
         text-align: center;
-        // overflow: hidden;
         padding: 1rem;
     
         &::before {

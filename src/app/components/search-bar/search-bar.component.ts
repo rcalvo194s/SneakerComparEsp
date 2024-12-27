@@ -21,7 +21,6 @@ export class SearchBarComponent {
   constructor(private router: Router) {}
 
   onSearch() {
-    console.log('Buscando por:', this.searchQuery);
-    this.router.navigate(['/results']);
+    this.router.navigate(['/results'], { queryParams: { search: this.searchQuery } });
   }
 }

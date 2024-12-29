@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+
 import { NavToolbarComponent } from '../../components/nav-toolbar/nav-toolbar.component';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
+import { SneakersFirebaseService } from '../../../services/sneakers-firebase.service';
 import { Sneaker } from '../../models/sneaker.model';
+import { Price } from '../../models/price.model';
 
 @Component({
   selector: 'app-sneaker-detail',
@@ -19,22 +23,30 @@ import { Sneaker } from '../../models/sneaker.model';
 })
 export class SneakerDetailComponent implements OnInit {
   sneaker: Sneaker = {
-    id: '1',
-    imagenUrl: 'https://images.stockx.com/images/Air-Jordan-1-Retro-High-OG-Chicago-Reimagined-GS-Product.jpg',
-    marca: 'Nike',
-    modelo: 'Chicago Reimagined',
-    nombre: 'Air Jordan 1 Retro High OG',
-    precioBase: 170,
+    id: '',
+    imagenUrl: '',
+    marca: '',
+    modelo: '',
+    nombre: '',
+    precioBase: 0,
     precios: []
   };
+  
+  compareTable: Price[] = [];
 
-  compareTable = [
-    { web: 'StockX', precio: 220, enlace: 'https://www.stockx.com' },
-    { web: 'GOAT', precio: 215, enlace: 'https://www.goat.com' },
-    { web: 'Flight Club', precio: 230, enlace: 'https://www.flightclub.com' }
-  ];
+  constructor(private sneakersService: SneakersFirebaseService, private activatedRoute: ActivatedRoute) {}
 
-  constructor() {}
+  ngOnInit() {
+    this.activatedRoute.queryParams.subscribe(data => {
+      let sneakerId: string = data['sneakerId'];
+      this.getSneaker(sneakerId);
+    })
+  }
 
-  ngOnInit() {}
+  getSneaker(sneakerId: string) {
+    this.sneakersService.getSneakerById(sneakerId).subscribe(data => {
+      this.sneaker = data;
+      this.compareTable = data.precios;
+    });
+  }
 }

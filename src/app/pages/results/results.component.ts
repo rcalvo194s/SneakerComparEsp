@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 import { NavToolbarComponent } from '../../components/nav-toolbar/nav-toolbar.component';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
-import { Sneaker } from '../../models/sneaker.model';
 import { SneakersFirebaseService } from '../../../services/sneakers-firebase.service';
+import { Sneaker } from '../../models/sneaker.model';
 
 @Component({
   selector: 'app-results',
@@ -26,7 +26,7 @@ export class ResultsComponent implements OnInit {
   sneakers: Sneaker[] = [];
   filteredSneakers: Sneaker[] = [];
 
-  constructor(private sneakersService: SneakersFirebaseService, private activeRoute: ActivatedRoute) {}
+  constructor(private sneakersService: SneakersFirebaseService, private activeRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.getSneakersFromFirebase();
@@ -50,5 +50,9 @@ export class ResultsComponent implements OnInit {
         sneaker.marca.toLowerCase().includes(searchQuery)
       );
     });
+  }
+
+  sneakerDeatil(sneakerId: string) {
+    this.router.navigate(['/detail'], { queryParams: { sneakerId: sneakerId } });
   }
 }

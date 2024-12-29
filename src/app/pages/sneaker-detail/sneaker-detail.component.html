@@ -20,8 +20,8 @@
           <p><strong>Marca:</strong> {{ sneaker.marca }}</p>
           <p><strong>Modelo:</strong> {{ sneaker.modelo }}</p>
           <p><strong>Precio base:</strong> {{ sneaker.precioBase }}€</p>
-          <p><strong>Fecha de lanzamiento:</strong> 11/01/2021</p>
-          <p><strong>Colores:</strong> Rojo, Azul, Negro</p>
+          <!-- <p><strong>Fecha de lanzamiento:</strong> 11/01/2021</p>
+          <p><strong>Colores:</strong> Rojo, Azul, Negro</p> -->
         </div>
       </div>
     
@@ -37,9 +37,9 @@
           </thead>
           <tbody>
             <tr *ngFor="let item of compareTable">
-              <td>{{ item.web }}</td>
+              <td>{{ item.tienda }}</td>
               <td>{{ item.precio }}</td>
-              <td><a [href]="item.enlace" target="_blank" rel="noopener">Comprar</a></td>
+              <td><a [href]="item.url" target="_blank" rel="noopener">Comprar</a></td>
             </tr>
           </tbody>
         </table>

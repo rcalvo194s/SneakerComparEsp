@@ -30,19 +30,20 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
     this.getSneakersFromFirebase();
-    this.searchFilter();
   }
 
   getSneakersFromFirebase() {
     this.sneakersService.getSneakers().subscribe(data => {
       this.sneakers = data;
       this.filteredSneakers = this.sneakers;
+      this.searchFilter();
     });
   }
 
   searchFilter() {
     this.activeRoute.queryParams.subscribe(params => {
       const searchQuery = params['search']?.toLowerCase() || '';
+      
       this.filteredSneakers = this.sneakers.filter(sneaker =>
         sneaker.nombre.toLowerCase().includes(searchQuery) ||
         sneaker.modelo.toLowerCase().includes(searchQuery) ||

@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
   constructor(private sneakersService: SneakersFirebaseService) {}
 
   ngOnInit() {
-    console.log('Firebase initialized successfully!');
     this.sneakersService.getSneakers().subscribe(data => {
       this.sneakers = data;
     });

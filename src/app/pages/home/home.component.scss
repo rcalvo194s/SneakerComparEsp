@@ -11,6 +11,10 @@ body {
     text-align: center;
     overflow: hidden;
     
+    > * {
+      transform: translateY(-3rem);
+    }
+    
     .home-title {
       font-family: "Broadway", sans-serif;
       font-size: 3rem;

@@ -18,15 +18,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SearchBarComponent implements OnInit {
   searchQuery: string = '';
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private activateRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
+    this.activateRoute.queryParams.subscribe(params => {
       this.searchQuery = params['search'] || '';
     });
   }
 
   onSearch() {
+    if (this.router.url.startsWith('/crud')) {
+      this.router.navigate(['/crud'], { queryParams: { search: this.searchQuery } });
+      return;
+    }
     this.router.navigate(['/results'], { queryParams: { search: this.searchQuery } });
   }
 }

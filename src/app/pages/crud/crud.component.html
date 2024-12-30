@@ -1,1 +1,54 @@
-<p>crud works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-nav-toolbar></app-nav-toolbar>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Img</th>
+                    <th>Nombre</th>
+                    <th>Modelo</th>
+                    <th>Marca</th>
+                    <th>Precio base</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sneaker of sneakers">
+                    <td>
+                        <img [src]="sneaker.imagenUrl" alt="{{ sneaker.nombre }}">
+                    </td>
+                    <td>{{ sneaker.nombre }}</td>
+                    <td>{{ sneaker.modelo }}</td>
+                    <td>{{ sneaker.marca }}</td>
+                    <td>{{ sneaker.precioBase }}€</td>
+                    <td>{{ sneaker.nombre }}</td>
+                    <td>
+                        <button (click)="editSneaker(sneaker)">Editar</button>
+                        <button (click)="deleteSneaker(sneaker.id)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div *ngIf="selectedSneaker">
+            <h3>Editar Sneaker</h3>
+            <form (ngSubmit)="saveSneaker()">
+                <input type="text" [(ngModel)]="selectedSneaker.nombre" placeholder="Nombre" name="nombre" />
+                <input type="text" [(ngModel)]="selectedSneaker.modelo" placeholder="Modelo" name="modelo" />
+                <input type="text" [(ngModel)]="selectedSneaker.marca" placeholder="Marca" name="marca" />
+                <input type="number" [(ngModel)]="selectedSneaker.precioBase" placeholder="Precio Base" name="precioBase" />
+                <input type="text" [(ngModel)]="selectedSneaker.imagenUrl" placeholder="Imagen URL" name="imagenUrl" />
+            </form>
+        </div>
+    </div>
+
+    <button (click)="addSneaker()">Nueva Sneaker</button>
+</body>
+</html>

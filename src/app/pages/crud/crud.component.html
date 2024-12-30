@@ -7,7 +7,7 @@
 </head>
 <body>
     <app-nav-toolbar></app-nav-toolbar>
-    <div>
+    <div class="crud-container">
         <table>
             <thead>
                 <tr>
@@ -28,10 +28,9 @@
                     <td>{{ sneaker.modelo }}</td>
                     <td>{{ sneaker.marca }}</td>
                     <td>{{ sneaker.precioBase }}€</td>
-                    <td>{{ sneaker.nombre }}</td>
-                    <td>
-                        <button (click)="editSneaker(sneaker)">Editar</button>
-                        <button (click)="deleteSneaker(sneaker.id)">Eliminar</button>
+                    <td class="buttons">
+                        <button id="edit-btn" (click)="editSneaker(sneaker)">Editar</button>
+                        <button id="delete-btn" (click)="deleteSneaker(sneaker.id)">Eliminar</button>
                     </td>
                 </tr>
             </tbody>

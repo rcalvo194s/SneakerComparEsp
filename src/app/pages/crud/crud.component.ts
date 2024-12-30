@@ -22,14 +22,16 @@ export class CrudComponent implements OnInit {
   sneakers: Sneaker[] = [];
   selectedSneaker: Sneaker | null = null; // TODO Cambiar más adelante
 
-  constructor(private sneakerFirebaseService: SneakersFirebaseService) {}
+  constructor(private sneakersService: SneakersFirebaseService) {}
 
   ngOnInit() {
     this.getSneakersFromFirebase();
   }
 
   getSneakersFromFirebase() {
-
+    this.sneakersService.getSneakers().subscribe(data => {
+      this.sneakers = data;
+    });
   }
 
   addSneaker() {

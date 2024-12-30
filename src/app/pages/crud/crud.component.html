@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CRUD</title>
 </head>
 <body>
     <app-nav-toolbar></app-nav-toolbar>
+    <div class="crud-head-container">
+        <app-search-bar></app-search-bar>
+        <button id="add-btn" (click)="addSneaker()">Nueva Sneaker</button>
+    </div>
     <div class="crud-container">
         <table>
             <thead>
                 <tr>
-                    <th>Img</th>
+                    <th></th>
                     <th>Nombre</th>
                     <th>Modelo</th>
                     <th>Marca</th>
@@ -48,6 +52,5 @@
         </div>
     </div>
 
-    <button (click)="addSneaker()">Nueva Sneaker</button>
 </body>
 </html>

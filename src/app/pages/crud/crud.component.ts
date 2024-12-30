@@ -5,6 +5,7 @@ import { SneakersFirebaseService } from '../../../services/sneakers-firebase.ser
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
 
 @Component({
   selector: 'app-crud',
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     MatInputModule,
-    NavToolbarComponent
+    NavToolbarComponent,
+    SearchBarComponent
   ],
   templateUrl: './crud.component.html',
   styleUrl: './crud.component.scss'

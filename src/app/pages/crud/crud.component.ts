@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { NavToolbarComponent } from '../../components/nav-toolbar/nav-toolbar.component';
-import { Sneaker } from '../../models/sneaker.model';
-import { SneakersFirebaseService } from '../../../services/sneakers-firebase.service';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
 import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+
+import { Sneaker } from '../../models/sneaker.model';
+import { SneakersFirebaseService } from '../../../services/sneakers-firebase.service';
+import { NavToolbarComponent } from '../../components/nav-toolbar/nav-toolbar.component';
+import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
+import { EditCreateSneakerComponent } from '../../components/edit-create-sneaker/edit-create-sneaker.component';
 
 @Component({
   selector: 'app-crud',
@@ -24,9 +27,8 @@ import { ActivatedRoute } from '@angular/router';
 export class CrudComponent implements OnInit {
   sneakers: Sneaker[] = [];
   filteredSneakers: Sneaker[] = [];
-  selectedSneaker: Sneaker | null = null; // TODO Cambiar más adelante
 
-  constructor(private sneakersService: SneakersFirebaseService, private activeRoute: ActivatedRoute ) {}
+  constructor(private sneakersService: SneakersFirebaseService, private activeRoute: ActivatedRoute, private dialog: MatDialog  ) {}
 
   ngOnInit() {
     this.getSneakersFromFirebase();
@@ -53,11 +55,15 @@ export class CrudComponent implements OnInit {
   }
 
   addSneaker() {
-
+    const dialogRef = this.dialog.open(EditCreateSneakerComponent, {
+      data: { sneaker: {}, edit: false },
+    });
   }
 
   editSneaker(sneaker: Sneaker) {
-
+    const dialogRef = this.dialog.open(EditCreateSneakerComponent, {
+      data: { sneaker: {...sneaker}, edit: true },
+    });
   }
 
   saveSneaker() {

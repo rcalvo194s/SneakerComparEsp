@@ -39,17 +39,6 @@
                 </tr>
             </tbody>
         </table>
-
-        <div *ngIf="selectedSneaker">
-            <h3>Editar Sneaker</h3>
-            <form (ngSubmit)="saveSneaker()">
-                <input type="text" [(ngModel)]="selectedSneaker.nombre" placeholder="Nombre" name="nombre" />
-                <input type="text" [(ngModel)]="selectedSneaker.modelo" placeholder="Modelo" name="modelo" />
-                <input type="text" [(ngModel)]="selectedSneaker.marca" placeholder="Marca" name="marca" />
-                <input type="number" [(ngModel)]="selectedSneaker.precioBase" placeholder="Precio Base" name="precioBase" />
-                <input type="text" [(ngModel)]="selectedSneaker.imagenUrl" placeholder="Imagen URL" name="imagenUrl" />
-            </form>
-        </div>
     </div>
 
 </body>

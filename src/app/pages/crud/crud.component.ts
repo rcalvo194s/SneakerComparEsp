@@ -42,6 +42,12 @@ export class CrudComponent implements OnInit {
     });
   }
 
+  addSneakerFirebase(sneaker: Sneaker) {
+    this.sneakersService.addSneaker(sneaker).then(() => {
+      this.getSneakersFromFirebase();
+    });
+  }
+
   searchFilter() {
     this.activeRoute.queryParams.subscribe(params => {
       const searchQuery = params['search']?.toLowerCase() || '';
@@ -55,14 +61,40 @@ export class CrudComponent implements OnInit {
   }
 
   addSneaker() {
+    const newSneaker: Sneaker = {
+      id: '',
+      imagenUrl: '',
+      nombre: '',
+      modelo: '',
+      marca: '',
+      precioBase: 0,
+      precios: []
+    };
+
     const dialogRef = this.dialog.open(EditCreateSneakerComponent, {
-      data: { sneaker: {}, edit: false },
+      data: { sneaker: newSneaker, edit: false },
+    });
+
+    dialogRef.afterClosed().subscribe((data: Sneaker) => {
+      if (data) {
+        this.addSneakerFirebase(data)
+      }
     });
   }
 
   editSneaker(sneaker: Sneaker) {
     const dialogRef = this.dialog.open(EditCreateSneakerComponent, {
       data: { sneaker: {...sneaker}, edit: true },
+    });
+
+    dialogRef.afterClosed().subscribe(data => {
+      if (data) {
+        const index = this.sneakers.findIndex(oldSneaker => oldSneaker.id === sneaker.id);
+        if (index >= 0) {
+          this.sneakers[index] = data;
+          console.log(this.sneakers);
+        }
+      }
     });
   }
 

@@ -7,6 +7,11 @@
         </mat-form-field>
 
         <mat-form-field appearance="fill">
+            <mat-label>Imagen URL</mat-label>
+            <input matInput [(ngModel)]="data.sneaker.imagenUrl" name="imagenUrl" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
             <mat-label>Nombre</mat-label>
             <input matInput [(ngModel)]="data.sneaker.nombre" name="nombre" required />
         </mat-form-field>

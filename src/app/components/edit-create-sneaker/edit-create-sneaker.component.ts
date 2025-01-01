@@ -1,13 +1,23 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
 
 import { Sneaker } from '../../models/sneaker.model';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-create-sneaker',
   standalone: true,
-  imports: [],
+  imports: [
+    FormsModule,
+    MatLabel,
+    MatFormField,
+    MatDialogClose,
+    MatInputModule,
+    CommonModule
+  ],
   templateUrl: './edit-create-sneaker.component.html',
   styleUrl: './edit-create-sneaker.component.scss'
 })

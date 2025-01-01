@@ -1,1 +1,35 @@
-<p>edit-create-sneaker works!</p>
+<h2 mat-dialog-title>{{ data.edit ? 'Editar Zapatilla' : 'Crear Zapatilla' }}</h2>
+<div class="edit-create-container" mat-dialog-content>
+    <form #editCreateForm="ngForm">
+        <mat-form-field appearance="fill">
+            <mat-label>ID</mat-label>
+            <input matInput [(ngModel)]="data.sneaker.id" name="id" [readonly]="data.edit" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input matInput [(ngModel)]="data.sneaker.nombre" name="nombre" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Marca</mat-label>
+            <input matInput [(ngModel)]="data.sneaker.marca" name="marca" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Modelo</mat-label>
+            <input matInput [(ngModel)]="data.sneaker.modelo" name="modelo" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Precio Base</mat-label>
+            <input matInput type="number" [(ngModel)]="data.sneaker.precioBase" name="precioBase" required />
+        </mat-form-field>
+    </form>
+</div>
+<div class="buttons" mat-dialog-actions>
+    <button id="cancel-btn" mat-button mat-dialog-close>Cancelar</button>
+    <button id="edit-create-btn" mat-button [mat-dialog-close]="data.sneaker" color="primary">
+        {{ data.edit ? 'Guardar' : 'Crear' }}
+    </button>
+</div>

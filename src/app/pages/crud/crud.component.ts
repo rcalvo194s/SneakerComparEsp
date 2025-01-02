@@ -54,6 +54,12 @@ export class CrudComponent implements OnInit {
     });
   }
 
+  deleteSneakerFirebase(sneakerId: string) {
+    this.sneakersService.deleteSneaker(sneakerId).then(() => {
+      this.getSneakersFromFirebase();
+    });
+  }
+
   searchFilter() {
     this.activeRoute.queryParams.subscribe(params => {
       const searchQuery = params['search']?.toLowerCase() || '';
@@ -105,6 +111,9 @@ export class CrudComponent implements OnInit {
   }
 
   deleteSneaker(sneakerId: string) {
-
+    const confirmDelete = window.confirm('¿Estás seguro que quieres eliminar la Sneaker?');
+    if (confirmDelete) {
+      this.deleteSneakerFirebase(sneakerId);
+    }
   }
 } 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { addDoc, collection, collectionData, deleteDoc, doc, Firestore, query, updateDoc, where } from '@angular/fire/firestore';
+import { collection, collectionData, deleteDoc, doc, Firestore, query, setDoc, updateDoc, where } from '@angular/fire/firestore';
 import { map, Observable } from 'rxjs';
 import { Sneaker } from '../app/models/sneaker.model';
 
@@ -18,18 +18,17 @@ export class SneakersFirebaseService {
   getSneakerById(sneakerId: string): Observable<Sneaker> {
     const sneakersCollection = collection(this.firestore, 'sneakers');
     const sneakersQuery = query(sneakersCollection, where('id', '==', sneakerId));
-
     return collectionData(sneakersQuery, { id: 'id' }).pipe(
       map((sneakers: Sneaker[]) => sneakers[0])
     );
   }
 
-  addSneaker(sneaker: any): Promise<any> {
-    const sneakersCollection = collection(this.firestore, 'sneakers');
-    return addDoc(sneakersCollection, sneaker);
+  createSneaker(sneaker: Sneaker): Promise<any> {
+    const sneakerDocument = doc(this.firestore, `sneakers/${sneaker.id}`);
+    return setDoc(sneakerDocument, sneaker);
   }
   
-  updateSneaker(sneaker: Sneaker): Promise<void> {
+  editSneaker(sneaker: Sneaker): Promise<void> { 
     const sneakerDoc = doc(this.firestore, `sneakers/${sneaker.id}`);
     return updateDoc(sneakerDoc, { ...sneaker });
   }

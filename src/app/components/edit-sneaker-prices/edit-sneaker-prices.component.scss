@@ -12,6 +12,21 @@
     margin-bottom: 1rem;
     align-items: center;
   }
+
+  #delete-btn {
+    background-color: #dc3545;
+    color: #ffffff;
+    margin-inline: 5px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #delete-btn:hover {
+    background-color: #a71d2a;
+  }
   
   .buttons {
     display: flex;

@@ -14,7 +14,7 @@
         <mat-label>Precio</mat-label>
         <input matInput type="number" [(ngModel)]="price.precio" [name]="'precio-' + i" required />
       </mat-form-field>
-      <button mat-button color="warn" (click)="removePrice(i)">Eliminar</button>
+      <button id="delete-btn" (click)="removePrice(i)">Eliminar</button>
     </div>
   </div>
   <div class="buttons" mat-dialog-actions>

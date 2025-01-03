@@ -31,6 +31,7 @@ export class EditCreateSneakerComponent {
 
   openEditPricesDialog() {
     const dialogRef = this.dialog.open(EditSneakerPricesComponent, {
+      width: '800px',
       data: { precios: this.data.sneaker.precios }
     });
 

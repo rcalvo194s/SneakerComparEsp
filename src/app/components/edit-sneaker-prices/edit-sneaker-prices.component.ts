@@ -4,7 +4,6 @@ import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from '@angular/material
 import { FormsModule } from '@angular/forms';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
-import { MatButton } from '@angular/material/button';
 import { MatInput } from '@angular/material/input';
 
 @Component({
@@ -15,7 +14,6 @@ import { MatInput } from '@angular/material/input';
     MatFormField,
     MatLabel,
     MatDialogClose,
-    MatButton,
     MatInput,
     CommonModule
   ],

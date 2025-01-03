@@ -31,12 +31,12 @@
             <input matInput type="number" [(ngModel)]="data.sneaker.precioBase" name="precioBase" required />
         </mat-form-field>
 
-        <button mat-raised-button color="primary" (click)="openEditPricesDialog()">Editar Precios</button>
     </form>
 </div>
 <div class="buttons" mat-dialog-actions>
-    <button id="cancel-btn" mat-button mat-dialog-close>Cancelar</button>
-    <button id="edit-create-btn" mat-button [mat-dialog-close]="data.sneaker" color="primary">
+    <button id="edit-price-btn" (click)="openEditPricesDialog()">Editar Precios</button>
+    <button id="cancel-btn" mat-dialog-close>Cancelar</button>
+    <button id="edit-create-btn" [mat-dialog-close]="data.sneaker" color="primary">
         {{ data.edit ? 'Guardar' : 'Crear' }}
     </button>
 </div>

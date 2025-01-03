@@ -1,23 +1,25 @@
-<h2 mat-dialog-title>Editar Precios</h2>
-<div mat-dialog-content>
-  <div *ngFor="let price of precios; let i = index" class="price-row">
-    <mat-form-field appearance="fill">
-      <mat-label>Tienda</mat-label>
-      <input matInput [(ngModel)]="price.tienda" [name]="'tienda-' + i" required />
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>URL</mat-label>
-      <input matInput [(ngModel)]="price.url" [name]="'url-' + i" required />
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Precio</mat-label>
-      <input matInput type="number" [(ngModel)]="price.precio" [name]="'precio-' + i" required />
-    </mat-form-field>
-    <button mat-button color="warn" (click)="removePrice(i)">Eliminar</button>
+<div class="sneaker-price-container">
+  <h2 mat-dialog-title>Editar Precios</h2>
+  <div mat-dialog-content>
+    <div *ngFor="let price of precios; let i = index" class="price-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Tienda</mat-label>
+        <input matInput [(ngModel)]="price.tienda" [name]="'tienda-' + i" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>URL</mat-label>
+        <input matInput [(ngModel)]="price.url" [name]="'url-' + i" required />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Precio</mat-label>
+        <input matInput type="number" [(ngModel)]="price.precio" [name]="'precio-' + i" required />
+      </mat-form-field>
+      <button mat-button color="warn" (click)="removePrice(i)">Eliminar</button>
+    </div>
   </div>
-  <button mat-button color="primary" (click)="addPrice()">Añadir Precio</button>
-</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Cancelar</button>
-  <button mat-button [mat-dialog-close]="precios" color="primary">Guardar</button>
+  <div class="buttons" mat-dialog-actions>
+    <button id="add-price-btn" (click)="addPrice()">Añadir Precio</button>
+    <button id="cancel-btn" mat-dialog-close>Cancelar</button>
+    <button id="save-btn" [mat-dialog-close]="precios">Guardar</button>
+  </div>
 </div>

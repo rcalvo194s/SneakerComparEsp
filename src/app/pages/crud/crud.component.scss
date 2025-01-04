@@ -86,35 +86,10 @@ body {
           background-color: #a71d2a;
         }
       }
-      
+
+      h1 {
+        text-align: center;
+      }
     }
-    
-    // form {
-    //   display: flex;
-    //   flex-direction: column;
-    //   gap: 12px;
-    //   max-width: 400px;
-    //   margin-bottom: 16px;
-    // }
-    
-    // form input[type='text'],
-    // form input[type='number'] {
-    //   padding: 8px;
-    //   border: 1px solid #ddd;
-    //   border-radius: 4px;
-    // }
-    
-    // form button {
-    //   align-self: flex-start;
-    // }
-    
-    // button:last-of-type {
-    //   margin-top: 16px;
-    //   background-color: #28a745;
-    // }
-    
-    // button:last-of-type:hover {
-    //   background-color: #1c7c31;
-    // }
   }
 }

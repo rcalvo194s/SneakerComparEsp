@@ -32,7 +32,7 @@ export class SneakerDetailComponent implements OnInit {
     precios: []
   };
   
-  compareTable: Price[] = [];
+  prices: Price[] = [];
 
   constructor(private sneakersService: SneakersFirebaseService, private activatedRoute: ActivatedRoute) {}
 
@@ -46,7 +46,7 @@ export class SneakerDetailComponent implements OnInit {
   getSneaker(sneakerId: string) {
     this.sneakersService.getSneakerById(sneakerId).subscribe(data => {
       this.sneaker = data;
-      this.compareTable = data.precios;
+      this.prices = data.precios;
     });
   }
 }

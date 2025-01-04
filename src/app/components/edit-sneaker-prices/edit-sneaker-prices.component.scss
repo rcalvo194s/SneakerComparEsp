@@ -1,9 +1,13 @@
 .sneaker-price-container {
+  overflow-y: scroll;
+  height: 80vh;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
 
   .price-row {
     display: flex;

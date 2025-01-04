@@ -1,62 +1,68 @@
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
 .edit-create-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  overflow-y: scroll;
+  height: 80vh;
   padding: 1rem;
-  
-  mat-form-field {
-    width: 100%;
+
+  h2 {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+    text-align: center;
   }
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  gap: 1rem;
-
-  button {
-    color: #ffffff;
-    width: 75px;
-    margin-inline: 5px;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    
+    mat-form-field {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
   }
-
-  #edit-price-btn {
-    background-color: #007bff;
-    width: 150px;
-  }
-
-  #edit-price-btn:hover {
-    background-color: #0056b3;
-  }
-
-  #edit-create-btn {
-    background-color: #00b33f;
-  }
-
-  #edit-create-btn:hover {
-    background-color: #0b622a;
-  }
-
-  #cancel-btn {
-    background-color: #dc3545;
-  }
-
-  #cancel-btn:hover {
-    background-color: #a71d2a;
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    gap: 1rem;
+  
+    button {
+      color: #ffffff;
+      width: 75px;
+      margin-inline: 5px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  
+    #edit-price-btn {
+      background-color: #007bff;
+      width: 150px;
+    }
+  
+    #edit-price-btn:hover {
+      background-color: #0056b3;
+    }
+  
+    #edit-create-btn {
+      background-color: #00b33f;
+    }
+  
+    #edit-create-btn:hover {
+      background-color: #0b622a;
+    }
+  
+    #cancel-btn {
+      background-color: #dc3545;
+    }
+  
+    #cancel-btn:hover {
+      background-color: #a71d2a;
+    }
   }
 }

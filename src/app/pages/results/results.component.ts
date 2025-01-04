@@ -55,4 +55,11 @@ export class ResultsComponent implements OnInit {
   sneakerDeatil(sneakerId: string) {
     this.router.navigate(['/detail'], { queryParams: { sneakerId: sneakerId } });
   }
+
+  getLowerPrice(sneaker: Sneaker) {
+    if (sneaker.precios.length === 0) {
+      return 'No hay resultado';
+    }
+    return Math.min(...sneaker.precios.map((precio) => precio.precio)).toString() + '€';
+  }
 }

@@ -1,4 +1,3 @@
-
 export const firebaseConfig = {
     apiKey: "AIzaSyC_xL_kMOjtyg7lVEU25faPmOWsukH_uZc",
     authDomain: "sneakercomparesp.firebaseapp.com",

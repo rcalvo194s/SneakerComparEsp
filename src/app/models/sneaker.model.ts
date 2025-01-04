@@ -1,4 +1,4 @@
-import { Price } from "./price.model";
+import { Price } from './price.model';
 
 export interface Sneaker {
     id: string;

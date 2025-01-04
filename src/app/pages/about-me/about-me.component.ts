@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavToolbarComponent } from '../../components/nav-toolbar/nav-toolbar.component';
 import { CommonModule } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
+
+import { NavToolbarComponent } from '../../components/nav-toolbar/nav-toolbar.component';
 
 @Component({
   selector: 'app-about-me',

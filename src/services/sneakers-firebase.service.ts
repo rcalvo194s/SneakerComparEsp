@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { collection, collectionData, deleteDoc, doc, Firestore, query, setDoc, updateDoc, where } from '@angular/fire/firestore';
 import { map, Observable } from 'rxjs';
+
 import { Sneaker } from '../app/models/sneaker.model';
 
 @Injectable({

@@ -27,7 +27,7 @@
                 <tbody>
                     <tr *ngFor="let sneaker of filteredSneakers">
                         <td>
-                            <img [src]="sneaker.imagenUrl" alt="{{ sneaker.nombre }}">
+                            <img [src]="sneaker.imagenUrl" alt="Imagen no disponible" title="{{ sneaker.nombre }}">
                         </td>
                         <td>{{ sneaker.nombre }}</td>
                         <td>{{ sneaker.modelo }}</td>

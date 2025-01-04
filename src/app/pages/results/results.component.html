@@ -14,7 +14,7 @@
         <div class="results-list">
             <ng-container *ngIf="filteredSneakers.length > 0">
                 <div class="result-card" (click)="sneakerDeatil(sneaker.id)" *ngFor="let sneaker of filteredSneakers">
-                    <img [src]="sneaker.imagenUrl" alt="Imagen de {{ sneaker.nombre }}" class="sneaker-image" />
+                    <img [src]="sneaker.imagenUrl" alt="Imagen no disponible" title="{{sneaker.nombre}}" class="sneaker-image" />
                     <div class="sneaker-info">
                         <h2>{{ sneaker.nombre }}</h2>
                         <p>Modelo: <b>{{ sneaker.modelo }}</b></p>
@@ -29,7 +29,6 @@
                 </div>
             </ng-container>
         </div>
-
     </div>
 </body>
 </html>

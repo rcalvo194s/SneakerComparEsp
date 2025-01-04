@@ -1,10 +1,11 @@
 import { Component, Inject } from '@angular/core';
-import { Price } from '../../models/price.model';
-import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
+import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from '@angular/material/dialog';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
+
+import { Price } from '../../models/price.model';
 
 @Component({
   selector: 'app-edit-sneaker-prices',
